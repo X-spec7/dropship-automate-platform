@@ -64,12 +64,12 @@ const Pricing = () => {
             duration={isMonthly ? "mo" : "yr"}
             subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            <OfferList text="Main Feature 1" status="active" />
+            <OfferList text="Main Feature 2" status="active" />
+            <OfferList text="Main Feature 3" status="active" />
+            <OfferList text="Main Feature 4" status="active" />
+            <OfferList text="Main Feature 5" status="inactive" />
+            <OfferList text="Main Feature 6" status="inactive" />
           </PricingBox>
           <PricingBox
             packageName="Basic"
@@ -77,12 +77,12 @@ const Pricing = () => {
             duration={isMonthly ? "mo" : "yr"}
             subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
+            <OfferList text="Main Feature 1" status="active" />
+            <OfferList text="Main Feature 2" status="active" />
+            <OfferList text="Main Feature 3" status="active" />
+            <OfferList text="Main Feature 4" status="active" />
+            <OfferList text="Main Feature 5" status="active" />
+            <OfferList text="Main Feature 6" status="inactive" />
           </PricingBox>
           <PricingBox
             packageName="Plus"
@@ -90,12 +90,12 @@ const Pricing = () => {
             duration={isMonthly ? "mo" : "yr"}
             subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
           >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="active" />
-            <OfferList text="Free Lifetime Updates" status="active" />
+            <OfferList text="Main Feature 1" status="active" />
+            <OfferList text="Main Feature 2" status="active" />
+            <OfferList text="Main Feature 3" status="active" />
+            <OfferList text="Main Feature 4" status="active" />
+            <OfferList text="Main Feature 5" status="active" />
+            <OfferList text="Main Feature 6" status="active" />
           </PricingBox>
         </div>
       </div>
