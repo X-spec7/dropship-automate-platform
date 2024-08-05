@@ -40,7 +40,7 @@ const blogData: Blog[] = [
       image: "/images/blog/author-03.png",
       designation: "ABC Company CEO",
     },
-    tags: ["Smart"],
+    tags: ["Smart Team"],
     publishDate: "2025",
   },
 ];
