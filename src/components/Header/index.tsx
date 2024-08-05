@@ -57,16 +57,16 @@ const Header = () => {
                 } `}
               >
                 <div className="flex justify-center items-center gap-4">
-                  <Image
+                  {/* <Image
                     src="/images/logo/logo.svg"
                     alt="logo"
                     width={140}
                     height={30}
                     className="w-full"
-                  />
-                  {/* <span className="">
+                  /> */}
+                  <span className=" text-[30px] font-sans">
                     Dropshipping
-                  </span> */}
+                  </span>
                 </div>
               </Link>
             </div>
@@ -134,7 +134,7 @@ const Header = () => {
                                 </svg>
                               </span>
                             </p>
-                            <div
+                            {/* <div
                               className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
                                 openIndex === index ? "block" : "hidden"
                               }`}
@@ -148,7 +148,7 @@ const Header = () => {
                                   {submenuItem.title}
                                 </Link>
                               ))}
-                            </div>
+                            </div> */}
                           </>
                         )}
                       </li>
