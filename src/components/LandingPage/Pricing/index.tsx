@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
-import SectionTitle from "../Common/SectionTitle";
+
 import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
+import SectionTitle from "@/components/Common/SectionTitle";
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
