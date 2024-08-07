@@ -64,7 +64,7 @@ const Header = () => {
                     height={30}
                     className="w-full"
                   /> */}
-                  <span className=" text-[30px] font-sans">
+                  <span className="text-3xl font-semibold italic font-sans">
                     Dropshipping
                   </span>
                 </div>
