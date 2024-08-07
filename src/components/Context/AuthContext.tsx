@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 interface AuthContextType {
   isLoggedIn: boolean;
@@ -12,7 +12,15 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const login = () => setIsLoggedIn(true);
+  const login = () => {
+    console.log("login method is being executed!")
+    setIsLoggedIn(true);
+  };
+
+  useEffect(() => {
+    console.log("isLoggedIn in AuthContext", isLoggedIn);
+  }, [isLoggedIn]);
+
   const logout = () => setIsLoggedIn(false);
 
   return (
