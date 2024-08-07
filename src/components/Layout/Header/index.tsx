@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 import { checkScrollUrl } from "@/util/helper";
-import SmoothScrollLink from "../Common/SmoothScrollLink";
+import SmoothScrollLink from "../../Common/SmoothScrollLink";
 
 const Header = () => {
   // Navbar toggle
