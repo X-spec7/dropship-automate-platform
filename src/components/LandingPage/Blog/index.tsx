@@ -1,4 +1,4 @@
-import SectionTitle from "../Common/SectionTitle";
+import SectionTitle from "../../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
 import blogData from "./blogData";
 
@@ -28,3 +28,8 @@ const Blog = () => {
 };
 
 export default Blog;
+export { default as blogData } from "./blogData";
+export { default as SingleBlog } from "./SingleBlog";
+export { default as TagButton } from "./TagButton";
+export { default as SharePost } from "./SharePost";
+export { default as RelatedPost } from "./RelatedPost";
