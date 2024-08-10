@@ -1,8 +1,8 @@
 "use client";
 
-import Footer from "@/components/Layout/Footer";
-import Header from "@/components/Layout/Header";
-import ScrollToTop from "@/components/ScrollToTop";
+import { Footer, Header } from "@/components/Layout";
+import { ScrollToTop } from "@/components/Common";
+import { Providers } from "./providers";
 import { Inter } from "next/font/google";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
@@ -29,5 +29,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-import { Providers } from "./providers";

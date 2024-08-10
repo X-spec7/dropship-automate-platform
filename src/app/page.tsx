@@ -1,6 +1,5 @@
-import { AboutSectionOne, AboutSectionTwo, Blog, Brands, Features, Hero, Pricing, Testimonials, Video } from "@/components/LandingPage";
-import ScrollUp from "@/components/Common/ScrollUp";
-import Contact from "@/components/Contact";
+import { ScrollUp } from "@/components/Common";
+import { AboutSectionOne, AboutSectionTwo, Blog, Brands, Contact, Features, Hero, Pricing, Testimonials, Video } from "@/components/LandingPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
