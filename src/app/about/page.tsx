@@ -1,5 +1,5 @@
+import { Breadcrumb } from "@/components/Common";
 import { AboutSectionOne, AboutSectionTwo } from "@/components/LandingPage";
-import Breadcrumb from "@/components/Common/Breadcrumb";
 
 import { Metadata } from "next";
 

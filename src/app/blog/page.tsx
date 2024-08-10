@@ -1,18 +1,8 @@
 "use client";
 
+import { Breadcrumb, Pagination } from "@/components/Common";
+import { blogData, SingleBlog } from "@/components/LandingPage";
 import React, { useState } from "react";
-import SingleBlog from "@/components/LandingPage/Blog/SingleBlog";
-import blogData from "@/components/LandingPage/Blog/blogData";
-import Breadcrumb from "@/components/Common/Breadcrumb";
-import Pagination from "@/components/Common/Pagination";
-
-// import { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "Blog Page | Fully Automated Dropshipping Platform",
-//   description: "This is Blog Page for Our Automated Dropshipping Platform",
-//   // other metadata
-// };
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);

@@ -1,5 +1,5 @@
 import { RelatedPost, SharePost, TagButton } from "@/components/LandingPage";
-import NewsLatterBox from "@/components/Contact/NewsLatterBox";
+import NewsLatterBox from "@/components/LandingPage/Contact/NewsLatterBox";
 import Image from "next/image";
 
 import { Metadata } from "next";
