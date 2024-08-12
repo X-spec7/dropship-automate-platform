@@ -32,7 +32,7 @@ const SigninPage = () => {
       setEmailError("");
       setPasswordError("");
       setError("");
-    }, 1000);
+    }, 1500);
   };
 
   // Todo: Disable Signin action for 1 second after the Signin Button is clicked

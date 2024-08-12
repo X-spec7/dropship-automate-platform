@@ -1,14 +1,80 @@
+"use client";
+
+import { useAuth } from "@/components/Context/AuthContext";
 import Link from "next/link";
-
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Sign Up Page | Fully Automated Dropshipping Platform",
-  description: "This is Sign Up Page for Our Automated Dropshipping Platform",
-  // other metadata
-};
+import { useRef, useState } from "react";
 
 const SignupPage = () => {
+
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [emailError, setEmailError] = useState<string>("");
+  const [passwordError, setPasswordError] = useState<string>("");
+
+  const errorTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const { register } = useAuth();
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    setEmailError("");
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+    setPasswordError("");
+  };
+
+  const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+  }
+
+  const clearErrorMessages = () => {
+    if (errorTimeoutRef.current) {
+      clearTimeout(errorTimeoutRef.current);
+    }
+    errorTimeoutRef.current = setTimeout(() => {
+      setEmailError("");
+      setPasswordError("");
+      setError("");
+    }, 1500);
+  };
+
+  // Todo: Disable Signin action for 1 second after the Signin Button is clicked
+  const handleRegister = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Todo: Implement more reasonable validation
+    let valid = true;
+    if (!email) {
+      setEmailError("Please enter your email.");
+      valid = false;
+    }
+    if (!password) {
+      setPasswordError("Please enter your password.");
+      valid = false;
+    }
+    if (password !== confirmPassword) {
+      setPasswordError("Password not match!")
+    }
+
+    if (!valid) {
+      clearErrorMessages();
+      return;
+    }
+
+    // Todo: Implement real signin logic here
+    if (email === "example@email.com" && password === "password") {
+      register();
+      setError("");
+    } else {
+      setError("Invalid email or password.");
+      clearErrorMessages();
+    }
+  };
+  
   return (
     <>
       <section className="relative z-10 overflow-hidden pb-16 pt-36 md:pb-20 lg:pb-28 lg:pt-[180px]">
@@ -65,7 +131,7 @@ const SignupPage = () => {
                   </p>
                   <span className="hidden h-[1px] w-full max-w-[60px] bg-body-color/50 sm:block"></span>
                 </div>
-                <form>
+                <form onSubmit={handleRegister}>
                   <div className="mb-8">
                     <label
                       htmlFor="email"
@@ -77,9 +143,14 @@ const SignupPage = () => {
                     <input
                       type="email"
                       name="email"
+                      value={email}
+                      onChange={handleEmailChange}
                       placeholder="Enter your Email"
                       className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
                     />
+                    {emailError && (
+                      <p className="mt-2 text-sm text-red-500">{emailError}</p>
+                    )}
                   </div>
                   <div className="mb-8">
                     <label
@@ -92,9 +163,31 @@ const SignupPage = () => {
                     <input
                       type="password"
                       name="password"
+                      value={password}
+                      onChange={handlePasswordChange}
                       placeholder="Enter your Password"
                       className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
                     />
+                  </div>
+                  <div className="mb-8">
+                    <label
+                      htmlFor="password"
+                      className="mb-3 block text-sm text-dark dark:text-white"
+                    >
+                      {" "}
+                      Confirm Your Password{" "}
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      value={confirmPassword}
+                      onChange={handleConfirmPasswordChange}
+                      placeholder="Enter your Password"
+                      className="border-stroke dark:text-body-color-dark dark:shadow-two w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:focus:border-primary dark:focus:shadow-none"
+                    />
+                    {passwordError && (
+                      <p className="mt-2 text-sm text-red-500">{passwordError}</p>
+                    )}
                   </div>
                   <div className="mb-8 flex">
                     <label
