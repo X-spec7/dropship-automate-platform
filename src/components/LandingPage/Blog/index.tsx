@@ -1,8 +1,24 @@
+"use client";
+
+import { useState } from "react";
 import SectionTitle from "../../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
 import blogData from "./blogData";
+import { Pagination } from "@/components/Common";
 
 const Blog = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 3;
+  const totalPages = Math.ceil(blogData.length / blogsPerPage);
+
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = blogData.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  const handlePageChagne = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+  
   return (
     <section
       id="blog"
@@ -16,12 +32,18 @@ const Blog = () => {
         />
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-x-6 lg:gap-x-8 xl:grid-cols-3">
-          {blogData.map((blog) => (
+          {currentBlogs.map((blog) => (
             <div key={blog.id} className="w-full">
               <SingleBlog blog={blog} />
             </div>
           ))}
         </div>
+
+        <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChagne}
+        />
       </div>
     </section>
   );
