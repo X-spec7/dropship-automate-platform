@@ -34,15 +34,11 @@ const Blog = () => {
             ))}
           </div>
 
-          <div>
-            <div>
-              <Pagination 
-              currentPage={ currentPage }
-              totalPages={ totalPages }
-              onPageChange={ handlePageChagne }
-              />
-            </div>
-          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChagne}
+          />
         </div>
       </section>
     </>
