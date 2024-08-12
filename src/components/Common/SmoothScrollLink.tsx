@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import { Menu } from "@/types/menu";
 import { usePathname } from "next/navigation";
