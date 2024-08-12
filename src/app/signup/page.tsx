@@ -12,6 +12,10 @@ const SignupPage = () => {
   const [error, setError] = useState<string>("");
   const [emailError, setEmailError] = useState<string>("");
   const [passwordError, setPasswordError] = useState<string>("");
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState<boolean>(true);
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsSubmitDisabled(!e.target.checked);
+  };
 
   const errorTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -74,7 +78,7 @@ const SignupPage = () => {
       clearErrorMessages();
     }
   };
-  
+
   return (
     <>
       <section className="relative z-10 overflow-hidden pb-16 pt-36 md:pb-20 lg:pb-28 lg:pt-[180px]">
@@ -86,7 +90,7 @@ const SignupPage = () => {
                   Create your account
                 </h3>
                 <p className="mb-11 text-center text-base font-medium text-body-color">
-                  It has 7 days of Trial Period
+                                    It has 7 days of Trial Period
                 </p>
                 <button className="border-stroke dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none">
                   <span className="mr-3">
@@ -124,6 +128,7 @@ const SignupPage = () => {
                   </span>
                   Sign in with Google
                 </button>
+
                 <div className="mb-8 flex items-center justify-center">
                   <span className="hidden h-[1px] w-full max-w-[60px] bg-body-color/50 sm:block"></span>
                   <p className="w-full px-5 text-center text-base font-medium text-body-color">
@@ -197,6 +202,7 @@ const SignupPage = () => {
                       <div className="relative">
                         <input
                           type="checkbox"
+                          onChange={handleCheckboxChange}
                           id="checkboxLabel"
                           className="sr-only"
                         />
@@ -234,7 +240,10 @@ const SignupPage = () => {
                     </label>
                   </div>
                   <div className="mb-6">
-                    <button className="shadow-submit dark:shadow-submit-dark flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white duration-300 hover:bg-primary/90">
+                    <button
+                      className={` ${isSubmitDisabled ? "cursor-not-allowed bg-gray-400" : "bg-blue-500 text-white hover:bg-primary/90 dark:shadow-submit-dark"} flex w-full items-center justify-center rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 `}
+                      disabled={isSubmitDisabled}
+                    >
                       Sign up
                     </button>
                   </div>
