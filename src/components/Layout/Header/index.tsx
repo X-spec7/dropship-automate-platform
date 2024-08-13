@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+
 import ThemeToggler from "./ThemeToggler";
 import landingPageMenuData from "./landingPageMenuData";
 import mainPageMenuData from "./mainPageMenuData";
-import { checkScrollUrl } from "@/util/helper";
-import SmoothScrollLink from "../../Common/SmoothScrollLink";
-import { useAuth } from "@/components/Context/AuthContext";
 import DropdownUser from "./DropDownUser";
+import { checkScrollUrl } from "@/util/helper";
+import { useAuth } from "@/components/Context/AuthContext";
+import { SmoothScrollLink } from "@/components/Common";
 
 const Header = () => {
-  // Navbar toggle
+
   const [navbarOpen, setNavbarOpen] = useState(false);
   const { isLoggedIn, logout } = useAuth();
 
@@ -20,7 +21,6 @@ const Header = () => {
     setNavbarOpen(!navbarOpen);
   };
 
-  // Sticky Navbar
   const [sticky, setSticky] = useState(false);
   const handleStickyNavbar = () => {
     if (window.scrollY >= 80) {
@@ -33,7 +33,6 @@ const Header = () => {
     window.addEventListener("scroll", handleStickyNavbar);
   });
 
-  // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
   const handleSubmenu = (index) => {
     if (openIndex === index) {

@@ -3,31 +3,37 @@ import { Menu } from "@/types/menu";
 const mainPageMenuData: Menu[] = [
   {
     id: 1,
-    title: "Tab1",
-    path: "#",
-    newTab: false,
-  },
-  {
-    id: 11,
-    title: "Tab2",
+    title: "DASHBOARD",
     path: "#",
     newTab: false,
   },
   {
     id: 2,
-    title: "Tab3",
+    title: "ACCOUNTS",
     path: "#",
     newTab: false,
   },
   {
     id: 3,
-    title: "Tab4",
+    title: "WALLET",
     path: "#",
     newTab: false,
   },
   {
     id: 4,
-    title: "Tab5",
+    title: "ORDERS",
+    path: "#",
+    newTab: false,
+  },
+  {
+    id: 5,
+    title: "TASKS",
+    path: "#",
+    newTab: false,
+  },
+  {
+    id: 6,
+    title: "MANAGE",
     path: "#",
     newTab: false,
   },
